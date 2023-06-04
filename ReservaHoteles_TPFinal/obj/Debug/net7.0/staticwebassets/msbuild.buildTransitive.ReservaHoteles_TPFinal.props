@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ReservaHoteles_TPFinal.props" />
+</Project>
