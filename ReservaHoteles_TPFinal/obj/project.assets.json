@@ -3466,11 +3466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+      "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
       "projectName": "ReservaHoteles_TPFinal",
-      "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+      "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
       "packagesPath": "C:\\Users\\denue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal\\obj\\",
+      "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\denue\\AppData\\Roaming\\NuGet\\NuGet.Config",

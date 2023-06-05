@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ReservaHoteles_TPFinal.Context;
 using ReservaHoteles_TPFinal.Models;
 using System.Diagnostics;
 
@@ -7,6 +8,7 @@ namespace ReservaHoteles_TPFinal.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly Hotel_context context = new Hotel_context();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,7 +17,9 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Habitacion> Habitaciones = new List<Habitacion>();
+            Habitaciones = context.Habitaciones.ToList();
+            return View(Habitaciones);
         }
 
         public IActionResult Privacy()
