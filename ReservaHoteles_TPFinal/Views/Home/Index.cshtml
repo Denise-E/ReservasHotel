@@ -60,8 +60,9 @@
                     <select>
                         @foreach(Habitacion h in Model)
                         {
-                                <option value="@h.numHabitacion">@h.numHabitacion | Capacidad: @h.capacidad personas</option>
-                        
+                            <!--LIMITAR POR DESOCUPADAS, FECHA Y CAPACIDAD, IF O EN MODEL CAMBIO EL .ToLIST()-->
+                           <option value="@h.numHabitacion">@h.numHabitacion | Capacidad: @h.capacidad personas</option>
+
                         }
                      </select>
                     
@@ -90,4 +91,7 @@
             </div>
         </div>
 
-
+@section Scripts
+    {
+    <script src="~/js/reservar.js"></script>
+    }
