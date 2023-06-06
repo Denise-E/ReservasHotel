@@ -2,9 +2,10 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    // action="../Controllers/HomeController/NombreAccion" method="post" -->
 }
 
-    <div class="container" style="margin-top: 1rem;" />
+<form class="container" style="margin-top: 1rem />
         <div class="row">
             <div class="mb-3">
                 <div class="col-lg-6 col-sm-12">
@@ -54,17 +55,15 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+             <div class="mb-3">
                 <div class="col-lg-6 col-sm-12">
-                    <label class="form-label" for="pagp">Habitaciones :</label>
-                    <select>
-                        @foreach(Habitacion h in Model)
-                        {
-                            <!--LIMITAR POR DESOCUPADAS, FECHA Y CAPACIDAD, IF O EN MODEL CAMBIO EL .ToLIST()-->
-                           <option value="@h.numHabitacion">@h.numHabitacion | Capacidad: @h.capacidad personas</option>
+            <label class="form-label" for="pagp" >Habitaciones :</label>
+                <select id ="habitacionesSelect">
+               
+                <option>...</option>
+              
 
-                        }
-                     </select>
+                </select>
                     
                 </div>
             </div>
@@ -89,9 +88,45 @@
                     <button onclick="reservar()" class="btn btn-outline-danger form-control">Reservar</button> <!-- Por Desarrollar -->
                 </div>
             </div>
-        </div>
+        </form>
 
 @section Scripts
     {
     <script src="~/js/reservar.js"></script>
+
+    <script>
+        function habitacionesDisponibles(){
+            let cantPersonas = parseInt(document.getElementById('cantidad').value);
+            alert(typeof(cantPersonas));
+            /*let fechaIngreso = document.getElementById('ingreso');
+            let fechaEgreso = document.getElementById('egreso');
+
+            var formData = new FormData();
+            formData.append('cantPersonas', cantPersonas);
+            formData.append('ingreso', fechaIngreso);
+            formData.append('egreso', fechaEgreso);*/
+
+                fetch(`../Controllers/HomeController/BusquedaHabitaciones?cantidadPersonas=${cantPersonas}`)
+                    .then(response =>{
+                        alert(response);
+                        response.json()
+                        alert(response)
+                    })
+                    .then(data => {
+                        alert(data); //DEVUELVE UNDEFINE
+                        var select = document.getElementById("habitacionesSelect");
+                        select.innerHTML = ""; // Limpiar opciones existentes
+
+                        data.forEach(habitacion => {
+                            var option = document.createElement("option");
+                            option.value = habitacion.Id;
+                            option.textContent = habitacion.Nombre;
+                            select.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+        }
+    </script>
     }

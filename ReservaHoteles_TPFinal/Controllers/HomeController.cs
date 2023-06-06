@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ReservaHoteles_TPFinal.Context;
 using ReservaHoteles_TPFinal.Models;
 using System.Diagnostics;
+
 
 namespace ReservaHoteles_TPFinal.Controllers
 {
@@ -17,9 +19,19 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
-            List<Habitacion> Habitaciones = new List<Habitacion>();
+            /*List<Habitacion> Habitaciones = new List<Habitacion>();
             Habitaciones = context.Habitaciones.ToList();
-            return View(Habitaciones);
+            return View(Habitaciones);*/
+            return View();
+        }
+        public List<Habitacion> ObtenerHabitaciones(int cantidadPersonas)
+        {
+            // Faltaria filtrar x fechas, pero son datos de las reservas no de la habitacion
+            var habitaciones = context.Habitaciones
+                .Where(h => h.capacidad >= cantidadPersonas)
+                .ToList();
+
+            return habitaciones;
         }
 
         public IActionResult Privacy()

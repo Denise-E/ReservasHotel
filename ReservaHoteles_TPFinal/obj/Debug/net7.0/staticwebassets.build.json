@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YJombe8iOTzn8cOfgT4VJN1iYw9j8vPoktzohWpVvvc=",
+  "Hash": "b4rVml7DZyn6q9H75OTYXLx9qmMDRD0vBkO7eYMp3ng=",
   "Source": "ReservaHoteles_TPFinal",
   "BasePath": "_content/ReservaHoteles_TPFinal",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\js\\reservar.js",
+      "SourceId": "ReservaHoteles_TPFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\",
+      "BasePath": "_content/ReservaHoteles_TPFinal",
+      "RelativePath": "js/reservar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\reservar.js"
     },
     {
       "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\js\\site.js",
