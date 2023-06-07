@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ReservaHoteles_TPFinal.Context;
 using ReservaHoteles_TPFinal.Models;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace ReservaHoteles_TPFinal.Controllers
@@ -19,19 +20,30 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
-            /*List<Habitacion> Habitaciones = new List<Habitacion>();
-            Habitaciones = context.Habitaciones.ToList();
-            return View(Habitaciones);*/
             return View();
         }
-        public List<Habitacion> ObtenerHabitaciones(int cantidadPersonas)
+
+        [HttpPost]
+        public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
-            // Faltaria filtrar x fechas, pero son datos de las reservas no de la habitacion
+            // Falta filtrar por disponibilidad segun las fechas
             var habitaciones = context.Habitaciones
-                .Where(h => h.capacidad >= cantidadPersonas)
+                .Where(h => h.capacidad >= datos.cantidadPersonas)
                 .ToList();
 
-            return habitaciones;
+            DatosReserva_aux aux = new DatosReserva_aux();
+            aux.habitacionesDisponibles = habitaciones;
+
+            aux.reservaAux.fechaIngreso = datos.fechaInicio;
+            aux.reservaAux.fechaEgreso = datos.fechaFinal;
+
+            //return View("Reservar", aux); 
+            return RedirectToAction("Reservar", aux);
+        }
+
+        public ActionResult Reservar(DatosReserva_aux datos)
+        {
+            return View(datos);
         }
 
         public IActionResult Privacy()
