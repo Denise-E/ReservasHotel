@@ -26,26 +26,33 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
-            // Falta filtrar por disponibilidad segun las fechas
+            /*Falta filtrar por disponibilidad segun las fechas
             var habitaciones = context.Habitaciones
                 .Where(h => h.capacidad >= datos.cantidadPersonas)
-                .ToList();
+                .ToList(); */
 
             DatosReserva_aux aux = new DatosReserva_aux();
-            aux.habitacionesDisponibles = habitaciones;
+            aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
 
             aux.reservaAux.fechaIngreso = datos.fechaInicio;
             aux.reservaAux.fechaEgreso = datos.fechaFinal;
 
-            //return View("Reservar", aux); 
             return RedirectToAction("Reservar", aux);
         }
 
-        public ActionResult Reservar(DatosReserva_aux datos)
+        public ActionResult Reservar(DatosReserva_aux aux)
         {
-            return View(datos);
+            DatosReserva_aux datos = new DatosReserva_aux();
+            datos = aux;
+            return View("Reservar",datos); 
+            // La lista de Habitacion llega vacia
         }
 
+        [HttpPost]
+        public bool AgregarReserva(DatosReserva_aux datos)
+        {
+            return false;
+        }
         public IActionResult Privacy()
         {
             return View();

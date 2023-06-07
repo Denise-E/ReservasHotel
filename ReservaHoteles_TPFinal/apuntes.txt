@@ -1,9 +1,6 @@
 
 Vistas:
+
  - Home con botones a las funcionalidades: check-in , check-out y reservas
- - Formulario para reservar ( con sweet alert? )
- - Check in y check out (acceso restringido)
-
-
- DUDAS:
- DE VISTAS A CONTROLADOR PASO DE DATOS.
+ - Formulario para reservar - IN PROCESSS (llega lista vacia de habitaciones - filtro por fecha - agregar reserva)
+ - Check in y check out (podemos crear Reservas onBuilding para testearlo)
