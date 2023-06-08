@@ -39,12 +39,14 @@ namespace ReservaHoteles_TPFinal.Controllers
 
             return RedirectToAction("Reservar", aux);
         }
-
+        
         public ActionResult Reservar(DatosReserva_aux aux)
         {
-            DatosReserva_aux datos = new DatosReserva_aux();
+            /*DatosReserva_aux datos = new DatosReserva_aux();
             datos = aux;
-            return View("Reservar",datos); 
+            return View("Reservar",datos);  */
+
+            return View("Reservar", aux);
             // La lista de Habitacion llega vacia
         }
 

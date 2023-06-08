@@ -34,12 +34,17 @@
                         Console.WriteLine("MODELO" + Model.habitacionesDisponibles);
                     };
 
-                    @foreach (var h in Model.habitacionesDisponibles)
+
+                    @if (Model.habitacionesDisponibles.Count > 0)
                     {
-                        Console.WriteLine("MODELO" + Model.habitacionesDisponibles);
-                        <option value="@h.numHabitacion">@h.numHabitacion / $ @h.costoPorDia</option>
+                       foreach (var h in Model.habitacionesDisponibles)
+                        {
+                            Console.WriteLine("MODELO" + Model.habitacionesDisponibles);
+                            <option value="@h.numHabitacion">@h.numHabitacion / $ @h.costoPorDia</option>
  
+                        } 
                     }
+                    
                    
 
                 </select>
@@ -50,14 +55,16 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="ingreso">Fecha de ingreso:</label>
-                <input asp-for="@Model.reservaAux.fechaIngreso" readonly type="date" id="ingreso" value="@Model.reservaAux.fechaIngreso" />
+                <input asp-for="@Model.reservaAux.fechaIngreso" readonly type="date" id="ingreso" value="@Model.reservaAux.fechaIngreso" hidden/>
+                <p>@Model.reservaAux.fechaIngreso</p>
             </div>
         </div>
 
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="egreso">Fecha de egreso:</label>
-                <input asp-for="@Model.reservaAux.fechaEgreso" readonly type="date" id="egreso" value="@Model.reservaAux.fechaEgreso" />
+                <input asp-for="@Model.reservaAux.fechaEgreso" readonly type="date" id="egreso" value="@Model.reservaAux.fechaEgreso" hidden />
+                <p>@Model.reservaAux.fechaEgreso</p>
             </div>
         </div>
 
