@@ -37,18 +37,19 @@ namespace ReservaHoteles_TPFinal.Controllers
             aux.reservaAux.fechaIngreso = datos.fechaInicio;
             aux.reservaAux.fechaEgreso = datos.fechaFinal;
 
-            return RedirectToAction("Reservar", aux);
+            return View("Reservar", aux);
+            //return RedirectToAction("Reservar", aux);
         }
         
-        public ActionResult Reservar(DatosReserva_aux aux)
+         /*public ActionResult Reservar(DatosReserva_aux aux)
         {
-            /*DatosReserva_aux datos = new DatosReserva_aux();
+           DatosReserva_aux datos = new DatosReserva_aux();
             datos = aux;
-            return View("Reservar",datos);  */
+            return View("Reservar",datos);  
 
             return View("Reservar", aux);
             // La lista de Habitacion llega vacia
-        }
+        }*/
 
         [HttpPost]
         public bool AgregarReserva(DatosReserva_aux datos)
