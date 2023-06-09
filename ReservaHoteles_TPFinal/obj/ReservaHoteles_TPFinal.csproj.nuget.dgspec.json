@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj": {}
+    "C:\\Users\\ariso\\OneDrive\\Escritorio\\PNT1_TP\\ReservasHotel\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj": {
+    "C:\\Users\\ariso\\OneDrive\\Escritorio\\PNT1_TP\\ReservasHotel\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+        "projectUniqueName": "C:\\Users\\ariso\\OneDrive\\Escritorio\\PNT1_TP\\ReservasHotel\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
         "projectName": "ReservaHoteles_TPFinal",
-        "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
-        "packagesPath": "C:\\Users\\denue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\",
+        "projectPath": "C:\\Users\\ariso\\OneDrive\\Escritorio\\PNT1_TP\\ReservasHotel\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+        "packagesPath": "C:\\Users\\ariso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ariso\\OneDrive\\Escritorio\\PNT1_TP\\ReservasHotel\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\denue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ariso\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
