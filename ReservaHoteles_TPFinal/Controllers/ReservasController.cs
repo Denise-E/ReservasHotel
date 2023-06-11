@@ -4,13 +4,10 @@ using ReservaHoteles_TPFinal.Context;
 
 namespace ReservaHoteles_TPFinal.Controllers
 {
-    public class CheckInController : Controller
+    public class ReservasController : Controller
     {
         private readonly Hotel_context context = new Hotel_context();
-        public IActionResult CheckIn()
-        {
-            return View();
-        }
+
 
         public IActionResult BuscarReserva(FiltroCheckIn datos)
         {
