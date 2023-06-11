@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ReservaHoteles_TPFinal.Context;
 using ReservaHoteles_TPFinal.Models;
 using System.Diagnostics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace ReservaHoteles_TPFinal.Controllers
@@ -33,13 +31,37 @@ namespace ReservaHoteles_TPFinal.Controllers
             aux.reservaAux.fechaIngreso = datos.fechaInicio;
             aux.reservaAux.fechaEgreso = datos.fechaFinal;
 
+            var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
+                    r.nroHabitacion == h.Id &&
+                    r.fechaIngreso <= datos.fechaInicio ||
+                    r.fechaEgreso > datos.fechaFinal));
+
+            aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
+
             return View("Reservar", aux);
         }
 
         [HttpPost]
-        public bool AgregarReserva(DatosReserva_aux datos)
+        public void AgregarReserva(DatosReserva_aux datos)
         {
-            return false;
+            Console.WriteLine("DATOS" + datos);
+
+            // Habria que ponerlo dentro de try y catch...
+
+            Reserva reserva = new Reserva()
+            {
+                titular = datos.reservaAux.titular,
+                nroHabitacion = datos.reservaAux.nroHabitacion,
+                fechaIngreso = datos.reservaAux.fechaIngreso,
+                fechaEgreso = datos.reservaAux.fechaEgreso,
+                idMedioPago = datos.reservaAux.idMedioPago,
+            };
+            
+            Console.WriteLine("Titular " + reserva.titular, " Hab " + reserva.nroHabitacion);
+            //datos.reservaAux;
+            context.Reservas.Add(reserva);
+            context.SaveChanges();
+            // Se guarda pero mal los valores.
         }
         public IActionResult Privacy()
         {
