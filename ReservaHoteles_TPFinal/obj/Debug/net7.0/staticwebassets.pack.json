@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\ReservaHoteles_TPFinal.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
       "Id": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\index_background.jpg",
+      "PackagePath": "staticwebassets\\index_background.jpg"
     },
     {
       "Id": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\js\\reservar.js",

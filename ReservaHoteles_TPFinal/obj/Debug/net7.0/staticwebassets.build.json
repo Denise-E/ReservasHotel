@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/XXA/kK3oUJvYGq7WaNRFxcFEa2vL09TTAw5L+GTcTc=",
+  "Hash": "DKiOV2GojxzSGjGt55fo34vUXhm6t1qSpUA2pCxr6mM=",
   "Source": "ReservaHoteles_TPFinal",
   "BasePath": "_content/ReservaHoteles_TPFinal",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ReservaHoteles_TPFinal.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\css\\index.css",
+      "SourceId": "ReservaHoteles_TPFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\",
+      "BasePath": "_content/ReservaHoteles_TPFinal",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
       "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\css\\site.css",
       "SourceId": "ReservaHoteles_TPFinal",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\index_background.jpg",
+      "SourceId": "ReservaHoteles_TPFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\",
+      "BasePath": "_content/ReservaHoteles_TPFinal",
+      "RelativePath": "index_background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index_background.jpg"
     },
     {
       "Identity": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\wwwroot\\js\\reservar.js",
