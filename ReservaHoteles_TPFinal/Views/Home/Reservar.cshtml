@@ -6,7 +6,7 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="titular">Titular</label>
-                <input asp-for="reservaAux.titular" type="text" id="titular" class="form-control" required/>
+                <input asp-for="titular" type="text" id="titular" class="form-control" required/>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="pagp">Forma de Pago :</label>
-                <select asp-for="reservaAux.idMedioPago" >
+                <select asp-for="idMedioPago" >
                     <option value="1">Credito</option>
                     <option value="2">Debito</option>
                     <option value="3">Mercado Pago</option>
@@ -30,7 +30,7 @@
 
                     @if (Model.habitacionesDisponibles.Count > 0)
                     {
-                    <select asp-for="reservaAux.nroHabitacion" id="habitacionesSelect">
+                    <select asp-for="nroHabitacion" id="habitacionesSelect">
 
                         <option value="count">Habitaciones disponibles : @Model.habitacionesDisponibles.Count </option> <!-- Validar distinto a count al enviar-->
                         @foreach (var h in Model.habitacionesDisponibles)
@@ -55,16 +55,16 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="ingreso">Fecha de ingreso:</label>
-                <input asp-for="reservaAux.fechaIngreso" readonly type="date" id="ingreso" value="@Model.reservaAux.fechaIngreso" hidden/>
-                <p>@Model.reservaAux.fechaIngreso.ToShortDateString()</p>
+                <input asp-for="fechaIngreso" type="date" id="ingreso" value="@Model.fechaIngreso" hidden/>
+                <p>@Model.fechaIngreso.ToShortDateString()</p>
             </div>
         </div>
 
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="egreso">Fecha de egreso:</label>
-                <input asp-for="reservaAux.fechaEgreso" readonly type="date" id="egreso" value="@Model.reservaAux.fechaEgreso" hidden />
-                <p>@Model.reservaAux.fechaEgreso.ToShortDateString()</p>
+                <input asp-for="fechaEgreso" type="date" id="egreso" value="@Model.fechaEgreso" hidden />
+                <p>@Model.fechaEgreso.ToShortDateString()</p>
             </div>
         </div>
 

@@ -28,8 +28,8 @@ namespace ReservaHoteles_TPFinal.Controllers
             DatosReserva_aux aux = new DatosReserva_aux();
             aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
 
-            aux.reservaAux.fechaIngreso = datos.fechaInicio;
-            aux.reservaAux.fechaEgreso = datos.fechaFinal;
+            aux.fechaIngreso = datos.fechaInicio;
+            aux.fechaEgreso = datos.fechaFinal;
 
             var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
                     r.nroHabitacion == h.Id &&
@@ -44,23 +44,23 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public void AgregarReserva(DatosReserva_aux datos)
         {
-            Console.WriteLine("DATOS" + datos);
+            Console.WriteLine("DATOS" + datos.titular);
 
             // Habria que ponerlo dentro de try y catch...
 
             Reserva reserva = new Reserva()
             {
-                titular = datos.reservaAux.titular,
-                nroHabitacion = datos.reservaAux.nroHabitacion,
-                fechaIngreso = datos.reservaAux.fechaIngreso,
-                fechaEgreso = datos.reservaAux.fechaEgreso,
-                idMedioPago = datos.reservaAux.idMedioPago,
+                titular = datos.titular,
+                nroHabitacion = datos.nroHabitacion,
+                pagado = datos.pagado,
+                idMedioPago = datos.idMedioPago,
+                fechaIngreso = datos.fechaIngreso,
+                fechaEgreso = datos.fechaEgreso,
             };
             
-            Console.WriteLine("Titular " + reserva.titular, " Hab " + reserva.nroHabitacion);
             context.Reservas.Add(reserva);
             context.SaveChanges();
-            // Se guarda pero mal los valores.
+            // Falta redireccionar y mostrar algun cartel de exito
         }
         public IActionResult Privacy()
         {
