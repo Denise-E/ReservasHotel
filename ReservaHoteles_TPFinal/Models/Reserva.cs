@@ -9,6 +9,7 @@ namespace ReservaHoteles_TPFinal.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string titular { get; set; }
 
         [Required]

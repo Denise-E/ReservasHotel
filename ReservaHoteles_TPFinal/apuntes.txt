@@ -2,13 +2,14 @@
 Vistas:
 
  - Home con botones a las funcionalidades: check-in , check-out y reservas
- - Formulario para reservar - IN PROCESSS (llega lista vacia de habitaciones - filtro por fecha - agregar reserva)
+ - Formulario para reservar - IN PROCESSS (falta creacion reserva)
  - Check in y check out (podemos crear Reservas onBuilding para testearlo)
 
 
+ PENDIENTE:
+ - Validar selects de Reservar (habitaciones y medios de pago)
 
- #DENU
-ALTER TABLE RESERVAS
-ALTER COLUMN titular VARCHAR(100);
 
-INSERT INTO RESERVAS VALUES(1,'Rodrigo Diaz', 11, 1, '2023/06/11','2023/06/30')
+ #Creacion de Reserva para testeos
+INSERT INTO Reservas(titular, nroHabitacion, pagado, idMedioPago, fechaIngreso, fechaEgreso)
+VALUES ('Rodrigo Diaz', 11, 1, 1, '2023-06-11', '2023-06-15');

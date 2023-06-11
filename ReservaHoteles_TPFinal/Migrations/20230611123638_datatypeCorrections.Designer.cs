@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservaHoteles_TPFinal.Context;
 
@@ -11,9 +12,11 @@ using ReservaHoteles_TPFinal.Context;
 namespace ReservaHoteles_TPFinal.Migrations
 {
     [DbContext(typeof(Hotel_context))]
-    partial class Hotel_contextModelSnapshot : ModelSnapshot
+    [Migration("20230611123638_datatypeCorrections")]
+    partial class datatypeCorrections
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
