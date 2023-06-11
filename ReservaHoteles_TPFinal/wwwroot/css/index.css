@@ -1,7 +1,13 @@
-﻿#index_container {
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,700&display=swap');
+
+
+
+#index_container {
     background-image: url("../index_background.jpg");
-    background-size: cover; 
+    background-size: cover;
     height: 25rem;
+
 }
 
     #index_container section {
@@ -21,7 +27,8 @@
             border: solid 2px #fff;
             border-radius: 8px;
             text-decoration: underline;
-            text-decoration-color: rgb(50, 20, 20);
+            text-decoration-color: #321414;
+            font-family: 'Playfair', serif;
         }
 
 #index_container section a:hover{

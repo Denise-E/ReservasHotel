@@ -1,0 +1,13 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,700&display=swap');
+
+
+#header-title {
+    width: 50%;
+    text-align: center;
+    font-family: 'Playfair', serif;
+}
+
+#header-logo {
+    width: 50%;
+}
