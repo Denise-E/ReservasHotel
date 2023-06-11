@@ -3461,19 +3461,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\denue\\.nuget\\packages\\": {}
+    "C:\\Users\\ivand\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+      "projectUniqueName": "C:\\Users\\ivand\\Source\\Repos\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
       "projectName": "ReservaHoteles_TPFinal",
-      "projectPath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
-      "packagesPath": "C:\\Users\\denue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\",
+      "projectPath": "C:\\Users\\ivand\\Source\\Repos\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+      "packagesPath": "C:\\Users\\ivand\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ivand\\Source\\Repos\\ReservasHotel\\ReservaHoteles_TPFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\denue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

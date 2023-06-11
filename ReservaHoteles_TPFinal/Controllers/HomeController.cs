@@ -18,6 +18,7 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
@@ -43,11 +44,12 @@ namespace ReservaHoteles_TPFinal.Controllers
 
             aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
 
+
             return View("Reservar", aux);
         }
 
         [HttpPost]
-        public void AgregarReserva(DatosReserva_aux datos)
+        public ActionResult AgregarReserva(DatosReserva_aux datos)
         {
             Console.WriteLine("DATOS" + datos.titular);
 
@@ -62,9 +64,14 @@ namespace ReservaHoteles_TPFinal.Controllers
                 fechaIngreso = datos.fechaIngreso,
                 fechaEgreso = datos.fechaEgreso,
             };
-            
+
+            /* Dejo esto comentado asi no nos guarda todo en la base de datos mientras 
+             probamos
             context.Reservas.Add(reserva);
-            context.SaveChanges();
+            context.SaveChanges(); */
+
+
+            return RedirectToAction("Index");
             // Falta redireccionar y mostrar algun cartel de exito
         }
 

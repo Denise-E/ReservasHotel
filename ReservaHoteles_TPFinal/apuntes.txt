@@ -1,3 +1,6 @@
+Importante:
+Para correr la pagina y migraciones tienen que cambiar la direccion de la database en el context, cambien a la de cada uno pero
+despues dejemos la de Denu que es la original
 
 Vistas:
 
