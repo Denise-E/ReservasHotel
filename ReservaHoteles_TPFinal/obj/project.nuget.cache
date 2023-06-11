@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VTaDhL+xhILeU8sUa2G1wvq6g0k3CteuMSbfsCL+pQ6Vszpw39N7YvQqhJruDpOut6FDKs1sUjp4Uqqjf1Sfwg==",
+  "dgSpecHash": "PKFEqmmaR0FSn/d9sg7YxuQDluyiYQZfn3fRF/Vuyor9sJuuuijEkA04s0qpIx8WOb552urIOSx3SXl8ytX1iA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel - copia\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
+  "projectFilePath": "C:\\Users\\denue\\OneDrive\\Documentos\\A Ort - Terciario\\PNT\\ReservaHoteles_TPFinal\\ReservasHotel\\ReservaHoteles_TPFinal\\ReservaHoteles_TPFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\denue\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\denue\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

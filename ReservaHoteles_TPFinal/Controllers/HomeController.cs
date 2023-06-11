@@ -58,7 +58,6 @@ namespace ReservaHoteles_TPFinal.Controllers
             };
             
             Console.WriteLine("Titular " + reserva.titular, " Hab " + reserva.nroHabitacion);
-            //datos.reservaAux;
             context.Reservas.Add(reserva);
             context.SaveChanges();
             // Se guarda pero mal los valores.
