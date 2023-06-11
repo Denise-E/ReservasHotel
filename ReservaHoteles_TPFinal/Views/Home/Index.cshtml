@@ -4,41 +4,47 @@
     var fechaActual = DateTime.Now.ToString("yyyy-MM-dd"); //dd-MM-yyyy <--- formato local (no lo acepta el type="date")
 
 }
+                    {
+    <form asp-controller="Home"  asp-action="ObtenerHabitaciones" class=" container" style="margin-top: 1rem">
 
-<form asp-controller="Home"  asp-action="ObtenerHabitaciones" class=" container" style="margin-top: 1rem">
+    @if (Model.habitacionesDisponibles.Count > 0)
+        <div class="row">
 
-    <div class="row">
+            <div class="mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <label class="form-label" for="cantidad">Habitacion para cuantos:</label>
+                    <input asp-for="cantidadPersonas" type="number" id="cantidad" class="form-control" max="5" required/> <!-- 5 es la cantidad máxima de personas que se acepta en nuestras habitaciones -->
+                    <p>Máximo 5 personas</p>
+                </div>
+            </div>
 
-        <div class="mb-3">
-            <div class="col-lg-6 col-sm-12">
-                <label class="form-label" for="cantidad">Habitacion para cuantos:</label>
-                <input asp-for="cantidadPersonas" type="number" id="cantidad" class="form-control" />
+            <div class="mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <label class="form-label" for="ingreso">Fecha de ingreso:</label>
+                    <input asp-for="fechaInicio" type="date" id="ingreso" min="@fechaActual" onchange="validarEgreso()" required />
+                </div>
+            </div>
 
+            <div class="mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <label class="form-label" for="egreso">Fecha de egreso:</label>
+                    <input asp-for="fechaFinal" type="date" id="egreso" min="@fechaActual" required /> <!-- Validar desde HTML con evento on keyup del ingreso? con el min  -->
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <button type="submit" class="btn btn-outline-danger form-control">Buscar habitaciones</button>
+                </div>
             </div>
         </div>
+    </form>
 
-        <div class="mb-3">
-            <div class="col-lg-6 col-sm-12">
-                <label class="form-label" for="ingreso">Fecha de ingreso:</label>
-                <input asp-for="fechaInicio" type="date" id="ingreso" min="@fechaActual" onchange="validarEgreso()"/>
-            </div>
-        </div>
+else
+    {
+        <p style="color: red; font-weight: bold; font-size: 2rem;">No hay abitaciones disponibles con esos criterios</p>
 
-        <div class="mb-3">
-            <div class="col-lg-6 col-sm-12">
-                <label class="form-label" for="egreso">Fecha de egreso:</label>
-                <input asp-for="fechaFinal" type="date" id="egreso" min="@fechaActual" /> <!-- Validar desde HTML con evento on keyup del ingreso? con el min  -->
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <div class="col-lg-6 col-sm-12">
-                <button type="submit" class="btn btn-outline-danger form-control">Buscar habitaciones</button>
-            </div>
-        </div>
-    </div>
- </form>
-
+    }
 
 <script>
     function validarEgreso() {

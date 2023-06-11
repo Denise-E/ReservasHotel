@@ -27,7 +27,7 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="pagp">Habitaciones :</label> 
-
+                  aaaaaaaxxxxx
                         
                     @if (Model.habitacionesDisponibles.Count > 0)
                     {
@@ -37,8 +37,7 @@
                         @foreach (var h in Model.habitacionesDisponibles)
                         {
                             Console.WriteLine("MODELO" + Model.habitacionesDisponibles);
-                            <option value="@h.numHabitacion">N° @h.numHabitacion / $ @h.costoPorDia</option>
-
+                            <option value="@h.numHabitacion">N° @h.numHabitacion / $ @h.costoPorDia - <i> Para: @h.capacidad</i></option>
                         }
                         </select>
                     }
