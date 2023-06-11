@@ -21,6 +21,11 @@ namespace ReservaHoteles_TPFinal.Controllers
             return View();
         }
 
+        public IActionResult FiltroReservas()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
@@ -61,6 +66,16 @@ namespace ReservaHoteles_TPFinal.Controllers
             context.Reservas.Add(reserva);
             context.SaveChanges();
             // Falta redireccionar y mostrar algun cartel de exito
+        }
+
+        public IActionResult CheckIn()
+        {
+            return View();
+        }
+
+        public IActionResult CheckOut()
+        {
+            return View();
         }
         public IActionResult Privacy()
         {

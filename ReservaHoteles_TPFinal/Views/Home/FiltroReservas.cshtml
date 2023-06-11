@@ -1,0 +1,47 @@
+﻿@model FiltroReserva
+@{
+    ViewData["Title"] = "Home Page";
+    var fechaActual = DateTime.Now.ToString("yyyy-MM-dd"); //dd-MM-yyyy <--- formato local (no lo acepta el type="date")
+
+}
+<form asp-controller="Home" asp-action="ObtenerHabitaciones" class=" container" style="margin-top: 1rem">
+
+    <div class="row">
+
+        <div class="mb-3">
+            <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="cantidad">Habitacion para cuantos:</label>
+                <input asp-for="cantidadPersonas" type="number" id="cantidad" class="form-control" max="5" required /> <!-- 5 es la cantidad máxima de personas que se acepta en nuestras habitaciones -->
+                <p>Máximo 5 personas</p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="ingreso">Fecha de ingreso:</label>
+                <input asp-for="fechaInicio" type="date" id="ingreso" min="@fechaActual" onchange="validarEgreso()" required />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="egreso">Fecha de egreso:</label>
+                <input asp-for="fechaFinal" type="date" id="egreso" min="@fechaActual" required />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="col-lg-6 col-sm-12">
+                <button type="submit" class="btn btn-outline-danger form-control">Buscar habitaciones</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    function validarEgreso() {
+        var ingreso = document.getElementById("ingreso").value;
+        document.getElementById("egreso").min = ingreso;
+    }
+</script>

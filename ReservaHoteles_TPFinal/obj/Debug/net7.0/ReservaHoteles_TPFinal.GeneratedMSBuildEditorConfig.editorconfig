@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\denue\OneDrive\Documentos\A Ort - Terciario\PNT\ReservaHoteles_TPFinal\ReservasHotel\ReservaHoteles_TPFinal
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/denue/OneDrive/Documentos/A Ort - Terciario/PNT/ReservaHoteles_TPFinal/ReservasHotel/ReservaHoteles_TPFinal/Views/Home/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja0luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denue/OneDrive/Documentos/A Ort - Terciario/PNT/ReservaHoteles_TPFinal/ReservasHotel/ReservaHoteles_TPFinal/Views/Home/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denue/OneDrive/Documentos/A Ort - Terciario/PNT/ReservaHoteles_TPFinal/ReservasHotel/ReservaHoteles_TPFinal/Views/Home/FiltroReservas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaWx0cm9SZXNlcnZhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/denue/OneDrive/Documentos/A Ort - Terciario/PNT/ReservaHoteles_TPFinal/ReservasHotel/ReservaHoteles_TPFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
