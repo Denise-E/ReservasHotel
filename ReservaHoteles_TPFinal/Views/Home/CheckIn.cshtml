@@ -1,16 +1,22 @@
 ﻿@model FiltroCheckIn
 <div class="container">
     <h1>CHECK IN </h1>
-</div>
-<form asp-controller="CheckIn" asp-action="BuscarReserva" class=" container" style="margin-top: 1rem">
+
+<form asp-controller="Reservas" asp-action="BuscarReserva" class=" container" style="margin-top: 1rem">
         <div class="row">
 
             <div class="mb-3">
                 <div class="col-lg-6 col-sm-12">
                     <label class="form-label" for="titular">¿A nombre de quien era la reserva?</label>
-                <input asp-for="titularReserva" type="text" id="titular" class="form-control" />
+                <input asp-for="titularReserva" type="text" id="titular" class="form-control" required/>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <button type="submit" class="btn btn-outline-danger form-control">Registrar</button>
                 </div>
             </div>
         </div>
     </form>
-
+</div>

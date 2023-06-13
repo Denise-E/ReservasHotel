@@ -2,6 +2,6 @@
 {
     public class FiltroCheckIn
     {
-        public string? titularReserva { get; set; }
+        public string titularReserva { get; set; }
     }
 }

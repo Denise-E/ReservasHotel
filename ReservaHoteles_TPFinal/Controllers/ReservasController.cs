@@ -9,36 +9,36 @@ namespace ReservaHoteles_TPFinal.Controllers
         private readonly Hotel_context context = new Hotel_context();
 
 
-        public IActionResult BuscarReserva(FiltroCheckIn datos)
+        public void BuscarReserva(FiltroCheckIn datos)
         {
             Reserva reservaBuscada = new Reserva();
             Habitacion habBuscada = new Habitacion();
 
             String nombreReserva = datos.titularReserva;
             reservaBuscada = context.Reservas.Where(r => r.titular.Equals(nombreReserva)).FirstOrDefault();
+            // Validar fecha? fechaIngreso de la reserva = fechaActual
 
             if (reservaBuscada != null) 
             {
+                Console.WriteLine("Reserva Encontrada");
                  habBuscada = context.Habitaciones.Where(h => h.numHabitacion == reservaBuscada.nroHabitacion).FirstOrDefault();
+                 
+                if(habBuscada != null)
+                {
+                    habBuscada.ocupada = true;
+                }
+
+                // Pendiente: registrar a las personas (Add) y modificar estado Habitacion en BBDD
+                //context.SaveChanges();
             }
 
-            if (habBuscada.ocupada) 
-            {
-                //Que hacemos si esta ocupada?
-            }
+            /*
+                1. Que hacemos si esta ocupada? NO DEBERIA PASAR QUE ESTE OCUPADA, POR ESO FILTRO AL RESERVAR
+                
+                2. Habria que eliminar la reserva de la base de datos? NO, debe quedar historial. 
+                O no hacemos nada o agregamos algun atributo booleano.
+            */
 
-            habBuscada.ocupada = true;
-
-
-            //Habria que eliminar la reserva de la base de datos y registrar a las personas
-
-
-
-
-
-
-
-            return View();
         }
     }
 
