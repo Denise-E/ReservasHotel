@@ -18,6 +18,7 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.ErrorMessage = TempData["ErrorMessage"];
             ViewBag.SuccessMessage = TempData["SuccessMessage"];
             return View();
         }
@@ -55,10 +56,9 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public ActionResult AgregarReserva(DatosReserva_aux datos)
         {
-            Console.WriteLine("DATOS" + datos.titular);
+            // Console.WriteLine("DATOS" + datos.titular);
 
             // Habria que ponerlo dentro de try y catch...
-
             Reserva reserva = new Reserva()
             {
                 titular = datos.titular,
@@ -69,14 +69,13 @@ namespace ReservaHoteles_TPFinal.Controllers
                 fechaEgreso = datos.fechaEgreso,
             };
 
-            /* Dejo esto comentado asi no nos guarda todo en la base de datos mientras 
-             probamos
+             //Dejo esto comentado asi no nos guarda todo en la base de datos mientras 
+             //probamos
             context.Reservas.Add(reserva);
-            context.SaveChanges(); */
+            context.SaveChanges(); 
 
-            TempData["SuccessMessage"] = "Form submitted successfully.";
+            TempData["SuccessMessage"] = "Se ha generado su reserva :)";
             return RedirectToAction("Index");
-            // Falta redireccionar y mostrar algun cartel de exito
         }
 
         public IActionResult CheckIn()

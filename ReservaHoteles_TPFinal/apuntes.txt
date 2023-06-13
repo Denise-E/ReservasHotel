@@ -2,14 +2,9 @@ Importante:
 Para correr la pagina y migraciones tienen que cambiar la direccion de la database en el context, cambien a la de cada uno pero
 despues dejemos la de Denu que es la original
 
-Vistas:
-
- - Formulario para reservar - IN PROCESSS (falta filtro x fechas)
- - Check in y check out 
-
-
  PENDIENTE:
  - Validar selects de Reservar (habitaciones y medios de pago)
+ - Agregar Validaciones de String Max Length
 
 
  #Creacion de Reserva para testeos

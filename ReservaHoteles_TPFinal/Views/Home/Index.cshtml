@@ -2,6 +2,16 @@
 <link rel="stylesheet" href="~/css/index.css" />
 <div id="successMessage"></div>
 
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+<div id="ErrorMessage"></div>
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
 <section id="index_container">
     <section>
         <a asp-action="FiltroReservas" asp-controller="Home">Reservar</a>
@@ -10,10 +20,7 @@
     </section>
 </section>
 
-@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
-{
-    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
-}
+
 
 
 
