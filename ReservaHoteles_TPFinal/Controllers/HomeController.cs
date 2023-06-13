@@ -38,9 +38,11 @@ namespace ReservaHoteles_TPFinal.Controllers
             aux.fechaEgreso = datos.fechaFinal;
 
             var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
-                    r.nroHabitacion == h.Id &&
-                    r.fechaIngreso <= datos.fechaInicio ||
-                    r.fechaEgreso > datos.fechaFinal));
+                r.nroHabitacion == h.numHabitacion &&
+                (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
+                (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso) ||
+                (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso)
+                    ));
 
             aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
 
