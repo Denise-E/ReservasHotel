@@ -18,7 +18,7 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         public IActionResult Index()
         {
-            
+            ViewBag.SuccessMessage = TempData["SuccessMessage"];
             return View();
         }
 
@@ -26,6 +26,8 @@ namespace ReservaHoteles_TPFinal.Controllers
         {
             return View();
         }
+
+
 
         [HttpPost]
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
@@ -72,7 +74,7 @@ namespace ReservaHoteles_TPFinal.Controllers
             context.Reservas.Add(reserva);
             context.SaveChanges(); */
 
-
+            TempData["SuccessMessage"] = "Form submitted successfully.";
             return RedirectToAction("Index");
             // Falta redireccionar y mostrar algun cartel de exito
         }

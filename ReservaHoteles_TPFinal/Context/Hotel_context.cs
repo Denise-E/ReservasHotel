@@ -89,9 +89,9 @@ namespace ReservaHoteles_TPFinal.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {   
             //La de arriba de todo es la de Denu, me dejo la mia abajo comentada
-            optionsBuilder.UseSqlServer("Data Source = DESKTOP-BKKMKDA\\MSSQLSERVER01 ; Initial Catalog = Hotel_PNT; Integrated Security = true; Encrypt=true; TrustServerCertificate=true");
+            //optionsBuilder.UseSqlServer("Data Source = DESKTOP-BKKMKDA\\MSSQLSERVER01 ; Initial Catalog = Hotel_PNT; Integrated Security = true; Encrypt=true; TrustServerCertificate=true");
             //Ivan:
-            //optionsBuilder.UseSqlServer("Data Source = LAPTOP-C56DTAB8\\MSSQLSERVER01 ; Initial Catalog = Hotel_PNT; Integrated Security = true; Encrypt=true; TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Data Source = LAPTOP-C56DTAB8\\MSSQLSERVER01 ; Initial Catalog = Hotel_PNT; Integrated Security = true; Encrypt=true; TrustServerCertificate=true");
         }
     }
 }

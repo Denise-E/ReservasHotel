@@ -1,5 +1,6 @@
 ﻿
 <link rel="stylesheet" href="~/css/index.css" />
+<div id="successMessage"></div>
 
 <section id="index_container">
     <section>
@@ -8,6 +9,11 @@
         <a asp-action="CheckOut" asp-controller="Home">Check Out</a>
     </section>
 </section>
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
 
 
 
