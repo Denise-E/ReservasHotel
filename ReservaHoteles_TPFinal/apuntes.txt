@@ -5,7 +5,12 @@ despues dejemos la de Denu que es la original
  PENDIENTE:
  - Validar selects de Reservar (habitaciones y medios de pago)
  - Agregar Validaciones de String Max Length
-
+ - Agregar Titular 
+ - [ ] Length inputs 
+ - [ ] Validar select 
+ - [ ] Verificar las fechas al crearse las reservas 
+ - [ ] Try catch 
+ - [ ] Mensaje para la reserva
 
  #Creacion de Reserva para testeos
 INSERT INTO Reservas(titular, nroHabitacion, pagado, idMedioPago, fechaIngreso, fechaEgreso)
