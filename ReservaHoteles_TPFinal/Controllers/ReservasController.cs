@@ -18,22 +18,28 @@ namespace ReservaHoteles_TPFinal.Controllers
 
             reservaBuscada = BuscarReserva(datos);
 
-            if (reservaBuscada != null) 
-            {
-                Console.WriteLine("Reserva Encontrada");
-                 habBuscada = context.Habitaciones.Where(h => h.numHabitacion == reservaBuscada.nroHabitacion).FirstOrDefault();
-                if(habBuscada != null)
+            if (reservaBuscada != null)
+            {   
+                if (reservaBuscada.fechaIngreso.Date < DateTime.Today)
                 {
-                    habBuscada.ocupada = true;
-                    context.Habitaciones.Update(habBuscada);
-                    context.SaveChanges();
-                    //registrarTitular(datos);
-                    TempData["SuccessMessage"] = "Se ha generado el checkIn :)";
+                    TempData["ErrorMessage"] = "Papi, viniste antes de tiempo :(";
                 } else
                 {
-                    TempData["ErrorMessage"] = "No se encontro la habitacion :(";
+                    habBuscada = context.Habitaciones.Where(h => h.numHabitacion == reservaBuscada.nroHabitacion).FirstOrDefault();
+                    if (habBuscada != null)
+                    {
+                        habBuscada.ocupada = true;
+                        context.Habitaciones.Update(habBuscada);
+                        context.SaveChanges();
+                        //registrarTitular(datos);
+                        TempData["SuccessMessage"] = "Se ha generado el checkIn :)";
+                    }
+                    else
+                    {
+                        TempData["ErrorMessage"] = "No se encontro la habitacion :(";
+                    }
                 }
-              
+
             } else
             {
                 TempData["ErrorMessage"] = "No se encontro una reserva con ese nombre :(";
@@ -53,7 +59,24 @@ namespace ReservaHoteles_TPFinal.Controllers
             Habitacion habBuscada = new Habitacion();
 
             reservaBuscada = BuscarReserva(datos);
-            
+            if (reservaBuscada != null)
+            {
+                habBuscada = context.Habitaciones.Where(h => h.numHabitacion == reservaBuscada.nroHabitacion).FirstOrDefault();
+                if (habBuscada != null)
+                {
+                    habBuscada.ocupada = false;
+                    context.Habitaciones.Update(habBuscada);
+                    context.SaveChanges();
+                    TempData["SuccessMessage"] = "Chau chau :)";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "No se encontro la habitacion :(";
+                }
+            } else
+            {
+                TempData["ErrorMessage"] = "No se encontro una reserva con ese nombre :(";
+            }
             return RedirectToAction(nameof(Index), "Home");
         }
 
@@ -63,6 +86,7 @@ namespace ReservaHoteles_TPFinal.Controllers
 
             string nombreReserva = datos.titularReserva;
             reservaBuscada = context.Reservas.Where(r => r.titular.Equals(nombreReserva)).FirstOrDefault();
+
 
             return reservaBuscada;
         }
