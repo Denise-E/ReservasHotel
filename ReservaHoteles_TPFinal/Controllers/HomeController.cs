@@ -34,29 +34,19 @@ namespace ReservaHoteles_TPFinal.Controllers
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
             DatosReserva_aux aux = new DatosReserva_aux();
-            try
-            {
+            aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
 
-                aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
+            aux.fechaIngreso = datos.fechaInicio;
+            aux.fechaEgreso = datos.fechaFinal;
 
-                aux.fechaIngreso = datos.fechaInicio;
-                aux.fechaEgreso = datos.fechaFinal;
+            var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
+         r.nroHabitacion == h.numHabitacion &&
+         (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
+               (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso)));
 
-                var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
-                    r.nroHabitacion == h.numHabitacion &&
-                    (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
-                    (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso) ||
-                    (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso)
-                        ));
-
-                aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "No se pudo generar la reserva";
-                return RedirectToAction(nameof(Index));
-            }
+            aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
             return View("Reservar", aux);
+
         }
 
         [HttpPost]
