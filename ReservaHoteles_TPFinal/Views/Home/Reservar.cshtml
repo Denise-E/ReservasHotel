@@ -55,7 +55,7 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="ingreso">Fecha de ingreso:</label>
-                <input asp-for="fechaIngreso" type="date" id="ingreso" value="@Model.fechaIngreso" hidden/>
+                <input asp-for="fechaIngreso" type="date" id="ingreso" value="@Model.fechaIngreso.ToString("yyyy-MM-dd")" hidden />
                 <p>@Model.fechaIngreso.ToShortDateString()</p>
             </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="mb-3">
             <div class="col-lg-6 col-sm-12">
                 <label class="form-label" for="egreso">Fecha de egreso:</label>
-                <input asp-for="fechaEgreso" type="date" id="egreso" value="@Model.fechaEgreso" hidden />
+                <input asp-for="fechaEgreso" type="date" id="egreso" value="@Model.fechaEgreso.ToString("yyyy-MM-dd")" hidden />
                 <p>@Model.fechaEgreso.ToShortDateString()</p>
             </div>
         </div>

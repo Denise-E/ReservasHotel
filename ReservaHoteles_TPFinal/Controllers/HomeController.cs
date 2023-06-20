@@ -33,46 +33,54 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
-
             DatosReserva_aux aux = new DatosReserva_aux();
-            aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
+            try
+            {
 
-            aux.fechaIngreso = datos.fechaInicio;
-            aux.fechaEgreso = datos.fechaFinal;
+                aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
 
-            var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
-                r.nroHabitacion == h.numHabitacion &&
-                (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
-                (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso) ||
-                (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso)
-                    ));
+                aux.fechaIngreso = datos.fechaInicio;
+                aux.fechaEgreso = datos.fechaFinal;
 
-            aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
+                var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
+                    r.nroHabitacion == h.numHabitacion &&
+                    (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
+                    (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso) ||
+                    (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso)
+                        ));
 
-
+                aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "No se pudo generar la reserva";
+                return RedirectToAction(nameof(Index));
+            }
             return View("Reservar", aux);
         }
 
         [HttpPost]
         public ActionResult AgregarReserva(DatosReserva_aux datos)
         {
-            // Console.WriteLine("DATOS" + datos.titular);
-
-            // Habria que ponerlo dentro de try y catch...
-            Reserva reserva = new Reserva()
+            try
             {
-                titular = datos.titular,
-                nroHabitacion = datos.nroHabitacion,
-                pagado = datos.pagado,
-                idMedioPago = datos.idMedioPago,
-                fechaIngreso = datos.fechaIngreso,
-                fechaEgreso = datos.fechaEgreso,
-            };
-
-             //Dejo esto comentado asi no nos guarda todo en la base de datos mientras 
-             //probamos
-            context.Reservas.Add(reserva);
-            context.SaveChanges(); 
+                Reserva reserva = new Reserva()
+                {
+                    titular = datos.titular,
+                    nroHabitacion = datos.nroHabitacion,
+                    pagado = datos.pagado,
+                    idMedioPago = datos.idMedioPago,
+                    fechaIngreso = datos.fechaIngreso,
+                    fechaEgreso = datos.fechaEgreso,
+                };
+                context.Reservas.Add(reserva);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "No se pudo generar la reserva";
+                return RedirectToAction(nameof(Index));
+            }
 
             TempData["SuccessMessage"] = "Se ha generado su reserva :)";
             return RedirectToAction("Index");
