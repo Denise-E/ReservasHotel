@@ -33,18 +33,32 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public IActionResult ObtenerHabitaciones(FiltroReserva datos)
         {
-            DatosReserva_aux aux = new DatosReserva_aux();
-            aux.habitacionesDisponibles = context.Habitaciones.Where(h => h.capacidad >= datos.cantidadPersonas).ToList();
 
+            DatosReserva_aux aux = new DatosReserva_aux();
             aux.fechaIngreso = datos.fechaInicio;
             aux.fechaEgreso = datos.fechaFinal;
+            aux.habitacionesDisponibles = context.Habitaciones.ToList();
+            aux.habitacionesDisponibles.RemoveAll(h => h.capacidad < datos.cantidadPersonas);
+            aux.habitacionesDisponibles.RemoveAll(habitacion => context.Reservas.Any(reservada =>
+            reservada.nroHabitacion == habitacion.numHabitacion &&
+            ((reservada.fechaIngreso <= aux.fechaIngreso && aux.fechaIngreso <= reservada.fechaEgreso)
+            || (reservada.fechaIngreso <= aux.fechaEgreso && aux.fechaEgreso <= reservada.fechaEgreso))));
 
-            var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
-         r.nroHabitacion == h.numHabitacion &&
-         (r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
-               (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso)));
+            /*var habitacionesFiltradas = aux.habitacionesDisponibles.Where(habitacion => context.Reservas.Any(reservada =>
+            reservada.nroHabitacion == habitacion.numHabitacion&& 
+            !((reservada.fechaIngreso <= aux.fechaIngreso && aux.fechaIngreso <= reservada.fechaEgreso) 
+            || (reservada.fechaIngreso <= aux.fechaEgreso && aux.fechaEgreso <= reservada.fechaEgreso)) ));*/
+            /*||  (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso)*/
 
-            aux.habitacionesDisponibles = habitacionesFiltradas.ToList();
+            /*var habitacionesFiltradas = aux.habitacionesDisponibles.Where(h => !context.Reservas.Any(r =>
+                r.nroHabitacion == h.numHabitacion &&
+                ((r.fechaIngreso <= aux.fechaIngreso && r.fechaEgreso > aux.fechaIngreso) ||
+                (r.fechaIngreso < aux.fechaEgreso && r.fechaEgreso >= aux.fechaEgreso) ||
+                (r.fechaIngreso >= aux.fechaIngreso && r.fechaEgreso <= aux.fechaEgreso))
+                    ));
+            */
+
+
             return View("Reservar", aux);
 
         }
