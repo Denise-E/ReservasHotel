@@ -48,7 +48,7 @@ namespace ReservaHoteles_TPFinal.Controllers
 
         private void ValidarFecha(DateTime fechaIngreso)
         {
-            if (fechaIngreso.Date < DateTime.Today)
+            if (fechaIngreso.Date > DateTime.Today)
             {
                 throw new InvalidDataException("Fecha Invalida");
             }

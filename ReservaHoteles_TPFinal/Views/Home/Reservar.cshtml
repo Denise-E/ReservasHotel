@@ -1,6 +1,6 @@
 ﻿@model DatosReserva_aux
 
-<form asp-controller="Home" asp-action="AgregarReserva" class="container" style="margin-top: 1rem">
+<form asp-controller="Home" asp-action="AgregarReserva" class="container" style="margin-top: 1rem" onsubmit="validarHabitacion(event)">
     
     <div class="row">
         <div class="mb-3">
@@ -32,7 +32,7 @@
                     {
                     <select asp-for="nroHabitacion" id="habitacionesSelect">
 
-                        <option value="count">Habitaciones disponibles : @Model.habitacionesDisponibles.Count </option> <!-- Validar distinto a count al enviar-->
+                        <option value="count" disabled selected>Habitaciones disponibles : @Model.habitacionesDisponibles.Count </option> <!-- Validar distinto a count al enviar-->
                         @foreach (var h in Model.habitacionesDisponibles)
                         {
                             Console.WriteLine("MODELO" + Model.habitacionesDisponibles);
@@ -43,11 +43,7 @@
                     else
                     {
                         <p style="color: red; font-weight: bold; font-size: 2rem;">No hay habitaciones disponibles con esos criterios</p>
-                    }
-
-                   
-
-                
+                    }      
 
             </div>
         </div>
@@ -69,13 +65,32 @@
         </div>
 
         <div class="mb-3">
-            <div class="col-lg-6 col-sm-12">
+            <div class="col-lg-6 col-sm-12">        
                 <button type="submit" class="btn btn-outline-danger form-control">Reservar</button> 
+                <span id="errorMensaje" style="color: red;"></span><!-- tiene qe aparecer un texto qe diga "seleccionar una habitacion valida"-->
         </div>
 
         </div>
     </div>
 
 </form>
+
+<script>
+    function validarHabitacion(e){
+        var selectValue = document.getElementById("habitacionesSelect").value;
+        var errorSpan = document.getElementById("errorMensaje");
+        var enviado = false;
+        console.log(selectValue)
+
+        if(selectValue == "count"){
+            errorSpan.textContent = "Seleccione una habitación válida";
+            e.preventDefault()
+            
+        }else {
+            enviado = true;
+        }
+        return enviado
+    }
+</script>
 
 

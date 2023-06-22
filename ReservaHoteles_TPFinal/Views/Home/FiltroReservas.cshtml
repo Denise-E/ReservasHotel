@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <div class="col-lg-6 col-sm-12">
                     <label class="form-label" for="cantidad">Habitacion para cuantos:</label>
-                    <input asp-for="cantidadPersonas" type="number" id="cantidad" class="form-control" max="5" required /> <!-- 5 es la cantidad máxima de personas que se acepta en nuestras habitaciones -->
+                    <input asp-for="cantidadPersonas" type="number" id="cantidad" class="form-control" min="1" max="5" required /> <!-- 5 es la cantidad máxima de personas que se acepta en nuestras habitaciones -->
                     <p>Máximo 5 personas</p>
                 </div>
             </div>

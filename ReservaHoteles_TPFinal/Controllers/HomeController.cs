@@ -66,30 +66,38 @@ namespace ReservaHoteles_TPFinal.Controllers
         [HttpPost]
         public ActionResult AgregarReserva(DatosReserva_aux datos)
         {
-            try
+            if (datos.nroHabitacion != 0)
             {
-                Reserva reserva = new Reserva()
+                try
                 {
-                    titular = datos.titular,
-                    nroHabitacion = datos.nroHabitacion,
-                    pagado = datos.pagado,
-                    idMedioPago = datos.idMedioPago,
-                    fechaIngreso = datos.fechaIngreso,
-                    fechaEgreso = datos.fechaEgreso,
-                };
-                context.Reservas.Add(reserva);
-                context.SaveChanges();
+                    Reserva reserva = new Reserva()
+                    {
+                        titular = datos.titular,
+                        nroHabitacion = datos.nroHabitacion,
+                        pagado = datos.pagado,
+                        idMedioPago = datos.idMedioPago,
+                        fechaIngreso = datos.fechaIngreso,
+                        fechaEgreso = datos.fechaEgreso,
+                    };
+                    Console.WriteLine(reserva);
+                    context.Reservas.Add(reserva);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = "No se pudo generar la reserva";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                TempData["SuccessMessage"] = "Se ha generado su reserva :)";
+                return RedirectToAction("Index");
             }
-            catch (Exception ex)
+            else
             {
-                TempData["ErrorMessage"] = "No se pudo generar la reserva";
+                TempData["ErrorMessage"] = "Seleccione una habitacion válida";
                 return RedirectToAction(nameof(Index));
             }
-
-            TempData["SuccessMessage"] = "Se ha generado su reserva :)";
-            return RedirectToAction("Index");
         }
-
         public IActionResult CheckIn()
         {
             return View();

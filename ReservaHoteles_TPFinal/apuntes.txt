@@ -15,3 +15,17 @@ despues dejemos la de Denu que es la original
  #Creacion de Reserva para testeos
 INSERT INTO Reservas(titular, nroHabitacion, pagado, idMedioPago, fechaIngreso, fechaEgreso)
 VALUES ('Rodrigo Diaz', 11, 1, 1, '2023-06-11', '2023-06-15');
+
+-------------
+22/6
+Correccion del Check-in si vino antes de tiempo (estaba al reves el signo de comparacion)
+
+Validacion del select de habitaciones:
+-no se manda el form si esta en la opcion incorrecta (la 1era opcion)
+-una vez que se cambia la primera opcion, no se puede seleccionar de nuevo
+
+Validacion de cantidad de personas en una habitacion:
+-no se puede poner un numero menor a 1
+
+Sugerencia:
+Agregar huespedes a la BD cuando se hace un checkIn y borrarlo cuando se hace un CheckOut?
